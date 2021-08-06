@@ -1,0 +1,23 @@
+{
+  "name": "gemkt",
+  "version": "0.0.0",
+  "description": "generator email marketing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoOssian/gemkt.git"
+  },
+  "author": "Francisco Ossian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FranciscoOssian/gemkt/issues"
+  },
+  "homepage": "https://github.com/FranciscoOssian/gemkt#readme",
+  "dependencies": {
+    "jimp": "^0.16.1",
+    "prompt-sync": "^4.2.0"
+  }
+}
