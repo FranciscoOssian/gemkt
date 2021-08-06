@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const setStore = (src) => {
-  fs.writeFileSync( './store.json', JSON.stringify(require(src)) );
+const setStore = (config) => {
+  fs.writeFileSync( './store.json', JSON.stringify(config) );
 }
 
 module.exports = setStore
