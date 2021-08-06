@@ -3,13 +3,7 @@ const { help } = require('../help.js');
 const { replace } = require('../replace.js');
 const { build } = require('../build.js');
 
-let configs
-try{
-    configs = require('../../../../gemkt.config.js');
-}
-catch(err){
-    throw new Error(err)
-}
+const gemktConfigFile = require('./store.json');
 
 class Gemkt{
     constructor(props){
@@ -18,11 +12,11 @@ class Gemkt{
         this.grunt = props.grunt;
         this.help = props.help;
 
-        this.templateSrc = configs.paths.templateFile
-        this.fileOutPutSrc = configs.paths.outFile
-        this.imagesPath = configs.paths.imagesFolder
+        this.templateSrc = gemktConfigFile.paths.templateFile
+        this.fileOutPutSrc = gemktConfigFile.paths.outFile
+        this.imagesPath = gemktConfigFile.paths.imagesFolder
 
-        this.dataSrc = configs.paths.dataFile;
+        this.dataSrc = gemktConfigFile.paths.dataFile;
     }
 
     cleanCache(){
