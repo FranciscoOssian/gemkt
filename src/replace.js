@@ -26,7 +26,10 @@ const replace = async ( { templateSrc, templateCmd, fileOutPutSrc } ) => {
         content = content + await gimage( imageContent.slice(start, end) )
     }
 
+    data = data.replace("{replace.content}", content)
+    
     await promises.writeFile(fileOutPutSrc, data);
+
 }
 
 module.exports.replace = replace;

@@ -4,12 +4,12 @@ const getImageWidth = async src => (await Jimp.read(src) ).bitmap.width;
 
 const unitImageWithLink = async  ({ image, link, alt }) => {
   const width = await getImageWidth(image);
-  return `<td width="${width}"><a href="${link}" target="_blank" rel="noopener"><img src="${image}" alt="${alt}" width="100%" style="border-width:0px;display:block;" /></a></td>`
+  return `<td width="${width}"><a href="${link}" target="_blank" rel="noopener"><img src="../${image}" alt="${alt}" width="100%" style="border-width:0px;display:block;" /></a></td>`
 }
 
 const unitImageWithOutLink = async ({ image, link, alt }) => {
   const width =  await getImageWidth(image);
-  return `<td width="${width}"><img src="${image}" alt="${alt}" width="100%" style="border-width:0px;display:block;" /></td>`
+  return `<td width="${width}"><img src="../${image}" alt="${alt}" width="100%" style="border-width:0px;display:block;" /></td>`
 }
 
 const gimage = async (images) => {
