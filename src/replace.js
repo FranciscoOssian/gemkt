@@ -1,7 +1,6 @@
 const { promises } = require('fs');
 const { gimage } = require('./templates/templateGenerator.js');
 
-
 let configs
 try{
     configs = require('../../../gemkt.config.js');
