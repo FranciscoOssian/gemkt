@@ -1,7 +1,15 @@
 const { promises } = require('fs');
 const { gimage } = require('./templates/templateGenerator.js');
 
-const { imageContent } = require( require('./gemkt/store.json').paths.dataFile );
+
+let configs
+try{
+    configs = require('../../../gemkt.config.js');
+}
+catch(err){
+    throw new Error(err)
+}
+const { imageContent } = require( configs.paths.dataFile );
 
 const replace = async ( { templateSrc, templateCmd, fileOutPutSrc } ) => {
 
