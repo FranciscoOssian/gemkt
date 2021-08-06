@@ -1,5 +1,5 @@
 const Gemkt = require('./src/gemkt/gemkt.js');
-const setStore = require('./src/gemkt/setStore');
+const setStore = require('./src/gemkt/store.js');
 
 const gemkt = (args) => {
 
