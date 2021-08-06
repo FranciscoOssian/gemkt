@@ -1,9 +1,15 @@
 const fs = require('fs');
 
-const gemktConfigs = require('./gemkt/store.json');
+let configs
+try{
+    configs = require('../../../gemkt.config.js');
+}
+catch(err){
+    throw new Error(err)
+}
 
-const src = gemktConfigs.paths.imagesFolder
-const imagesPath = gemktConfigs.paths.imagesFolder
+const dataFile = configs.paths.dataFile
+const imagesPath = configs.paths.imagesFolder
 
 const imageBaseLocalTemplate = './images/index_{number}.png';
 
@@ -18,7 +24,7 @@ const clean = () => {
     if(finalIndex === undefined) throw new Error('final index undefined, error');
     if(finalIndex < 0) throw new Error('final index negative, error');
 
-    let rawdata = fs.readFileSync(src);
+    let rawdata = fs.readFileSync(dataFile);
     let data = JSON.parse(rawdata);
     data.imageContent = [];
 
@@ -37,7 +43,7 @@ const clean = () => {
     }
 
     let dataJson = JSON.stringify(data);
-    fs.writeFileSync(src, dataJson);
+    fs.writeFileSync(dataFile, dataJson);
 
 
 }

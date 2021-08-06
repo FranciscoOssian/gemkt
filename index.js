@@ -1,35 +1,34 @@
-const Gemkt = require('./src/gemkt/gemkt.js');
-const setStore = require('./src/gemkt/store.js');
+const { promises } = require('fs');
+const { gimage } = require('./templates/templateGenerator.js');
 
-const gemkt = (args) => {
-
-    setStore(args.config);
-
-    console.log('args', args);
-
-    const gemkt = new Gemkt(args);
-    
-    if(args.help){
-        gemkt.getHelp();
-        return;
-    }
-    
-    console.log("iniciando gemkt com args");
-
-    const {templateCmd, ...rest} = args;
-    console.table(rest);
-    console.log(`template:`)
-    console.log(templateCmd)
-    
-    if(args.cleanCache === true) {
-        console.log("limpando cache...");
-        gemkt.cleanCache();
-        return;
-    }
-
-    console.log("subistituindo placeholders...");
-    gemkt.replace(args.templateCmd);
-
+let configs
+try{
+    configs = require('../../../gemkt.config.js');
+}
+catch(err){
+    throw new Error(err)
 }
 
-module.exports = gemkt;
+const { imageContent } = require( configs.paths.dataFile );
+
+const replace = async ( { templateSrc, templateCmd, fileOutPutSrc } ) => {
+
+
+    let data = await promises.readFile(templateSrc, "utf8");
+
+    let content = '';
+    let start = 0
+    let end = 0
+    let size
+
+    for(line of templateCmd){
+        size = parseInt(line)
+        start = end
+        end = end + size
+        content = content + await gimage( imageContent.slice(start, end) )
+    }
+
+    await promises.writeFile(fileOutPutSrc, data);
+}
+
+module.exports.replace = replace;
