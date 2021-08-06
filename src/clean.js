@@ -1,9 +1,15 @@
 const fs = require('fs');
 
-const gemktConfigs = require('./gemkt/store.json');
+let configs
+try{
+    configs = require('../../../gemkt.config.js');
+}
+catch(err){
+    throw new Error(err)
+}
 
-const src = gemktConfigs.paths.imagesFolder
-const imagesPath = gemktConfigs.paths.imagesFolder
+const src = configs.paths.imagesFolder
+const imagesPath = configs.paths.imagesFolder
 
 const imageBaseLocalTemplate = './images/index_{number}.png';
 

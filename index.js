@@ -1,11 +1,6 @@
 const Gemkt = require('./src/gemkt/gemkt.js');
-const setStore = require('./src/gemkt/store.js');
 
 const gemkt = (args) => {
-
-    setStore(args.config);
-
-    console.log('args', args);
 
     const gemkt = new Gemkt(args);
     
