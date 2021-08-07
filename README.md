@@ -5,7 +5,7 @@ type ```node . help``` to see the lite doc of the gemkt
 
 # Project struct to run the library
 
-````
+```
 📦teste
  ┣ 📂htmls
  ┃ ┣ 📂build
@@ -22,7 +22,7 @@ type ```node . help``` to see the lite doc of the gemkt
  ┣ 📜index.js
  ┣ 📜package-lock.json
  ┗ 📜package.json
-```
+ ```
 
 # GEMKT function
 
