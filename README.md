@@ -1,6 +1,19 @@
-Gemkt is a email marketing generator.
+# Gemkt 
+a email marketing generator.
 
-type node . help to see the lite doc of tha gemkt
+type ```node . help``` to see the lite doc of the gemkt
+
+# Project struct to run the library
+
+-|htmls
+----|build
+---------|index.html
+----|out.html
+----|template.html
+----|anotherTemplate.html
+----images
+-|data.json
+-|gemkt.config.js
 
 # GEMKT function
 
@@ -11,11 +24,6 @@ type node . help to see the lite doc of tha gemkt
     <th>Name</th>
     <th>Type</th> 
     <th>Use</th>
-  </tr>
-  <tr>
-    <td>configFile</td>
-    <td>Object</td>
-    <td>Config of Gemkt</td>
   </tr>
   <tr>
     <td>help</td>
@@ -36,7 +44,9 @@ type node . help to see the lite doc of tha gemkt
 
 # GEMKT config file js (gemkt.config.js)
 
-## Example
+Gemkt configuration works with a ```gemkt.config.js``` file declareted in your project root.
+
+## Example of gemkt.config.js file
 
 ```
 const { resolve } = require('path');
@@ -53,3 +63,13 @@ config = {
 module.exports = config
 
 ```
+
+# The Data file
+
+In your projet you will declare a data.json file, with contains the images, links and alts of the email marketing.
+
+Its a Arry with each element contains a Object with image, link and alt for construct the html file.
+
+# The especial CleanCache prop
+
+In Gemkt main function parameter object, exists a prop calls cleanCache. This props when ```true``` automatically clean the link, alt, image filds of data.json and populates data.json with images based on images folder
