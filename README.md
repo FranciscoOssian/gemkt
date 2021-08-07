@@ -18,9 +18,7 @@ type ```node . help``` to see the lite doc of the gemkt
  ┃ ┗ 📜index_04.png
  ┣ 📜data.json
  ┣ 📜gemkt.config.js
- ┣ 📜Gruntfile.js
  ┣ 📜index.js
- ┣ 📜package-lock.json
  ┗ 📜package.json
  ```
 
