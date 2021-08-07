@@ -5,15 +5,22 @@ type ```node . help``` to see the lite doc of the gemkt
 
 # Project struct to run the library
 
--|htmls
-----|build
----------|index.html
-----|out.html
-----|template.html
-----|anotherTemplate.html
-----images
--|data.json
--|gemkt.config.js
+📦teste
+ ┣ 📂htmls
+ ┃ ┣ 📂build
+ ┃ ┃ ┗ 📜index.html
+ ┃ ┣ 📜out.html
+ ┃ ┗ 📜template.html
+ ┣ 📂images
+ ┃ ┣ 📜index_02.png
+ ┃ ┣ 📜index_03.png
+ ┃ ┗ 📜index_04.png
+ ┣ 📜data.json
+ ┣ 📜gemkt.config.js
+ ┣ 📜Gruntfile.js
+ ┣ 📜index.js
+ ┣ 📜package-lock.json
+ ┗ 📜package.json
 
 # GEMKT function
 
